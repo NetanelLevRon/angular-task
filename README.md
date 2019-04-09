@@ -1,4 +1,4 @@
-# ANGULAR TASK
+# ANGULAR - COUNTRIES SEARCH FILTER WEB
 
 ## in this project i used:
 * servise
