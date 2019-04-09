@@ -1,0 +1,31 @@
+<div>
+
+  <input placeholder="search country or capital city" #searchInput type="text" (keyup)="search(searchInput.value)"/>
+
+
+  
+    <table border="3">
+  
+      <tr >
+        <td>Name</td>
+        <td>Native name</td>
+        <td>Capital</td>
+        <td>Population</td>
+        <td>Flag</td>
+      </tr>
+
+    <ng-container *ngIf="searchInput.value">
+      <tr *ngFor="let item of allcountries">
+              <!-- On each "item" apply highlight pipe -->
+              <td><span [innerHTML]="item.name | highlight: searchInput.value"></span></td>
+              <td>{{item.nativeName}}</td>
+              <td><span [innerHTML]="item.capital | highlight: searchInput.value"></span></td>
+              <td>{{item.population}}</td>
+              <td><img src="{{item.flag}}" /></td>
+      </tr>
+    </ng-container>
+ 
+  </table>
+
+
+</div>
